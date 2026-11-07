@@ -5,7 +5,7 @@
 export const auditMeta = {
   application: "AccessLab Demo — University Services Portal (fictional)",
   title: "Accessibility assessment of the student booking journey",
-  assessmentDate: null as string | null,
+  assessmentDate: "October 30th 2026",
   evaluator: null as string | null,
   purpose:
   "To demonstrate an evaluation workflow — scoping, testing, documenting, remediating and retesting — on a controlled application with known, intentionally introduced defects.",
@@ -23,10 +23,10 @@ export const auditScope = [
 
 
 export const auditEnvironment = {
-  browsers: [] as string[],
-  operatingSystems: [] as string[],
-  assistiveTechnologies: [] as string[],
-  automatedTools: [] as string[]
+  browsers: ['Chrome', 'Firefox'] as string[],
+  operatingSystems: ['Windows 10'] as string[],
+  assistiveTechnologies: ['NVDA', ' Axe ', 'JAWS'] as string[],
+  automatedTools: ['axe'] as string[]
 };
 
 export const keyboardProcedure = [

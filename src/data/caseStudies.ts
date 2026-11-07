@@ -73,123 +73,123 @@ export const caseStudies: CaseStudy[] = [
     paragraphs: ["Working across multiple modules on a single platform reinforced the value of consistent component patterns and a shared state layer — changes to the auth flow or API integration propagated cleanly across the whole application."]
   }]
 },
-{
-  slug: "accessiD8",
-  title: "AccessiD8",
-  tagline: "Frontend engineering for a data-driven web application built under NDA.",
-  role: "Frontend developer",
-  stack: ["React", "TypeScript", "REST APIs", "Microsoft identity"],
-  sections: [
-  {
-    id: "overview",
-    title: "Project overview",
-    paragraphs: ["AccessiD8 is a data-driven web application with dashboards, data presentation and organisational sign-in, built under NDA at Infinion Technologies."],
-    ownerInput: ["One-sentence description of the product's purpose and audience", "Your dates on the project and team size"]
-  },
-  {
-    id: "context",
-    title: "Context and constraints",
-    paragraphs: ["This project was built under NDA. Confidential business information, internal endpoints and customer data are intentionally omitted from this case study."],
-    ownerInput: ["Constraints you worked under (deadlines, browser support, existing APIs, design system)"]
-  },
-  {
-    id: "role",
-    title: "My role and responsibilities",
-    paragraphs: ["Only responsibilities the owner confirms will be listed here."],
-    ownerInput: ["Confirm which areas you delivered"]
-  },
-  {
-    id: "stack",
-    title: "Technical stack",
-    paragraphs: ["React with TypeScript on the client, consuming REST APIs, with organisational sign-in through the Microsoft identity platform."],
-    ownerInput: ["Exact libraries used for state, data fetching and UI"]
-  },
-  {
-    id: "results",
-    title: "Results and evidence",
-    paragraphs: ["No outcome metrics are published for this project. None will be added unless they can be substantiated."]
-  },
-  {
-    id: "lessons",
-    title: "Lessons learned",
-    paragraphs: [],
-    ownerInput: ["What you would do differently next time"]
-  }]
-},
-{
-  slug: "innexa",
-  title: "Innexa",
-  tagline: "A B2B admin dashboard with Azure AD authentication, collapsible sidebar and RTK Query API integration.",
-  role: "Frontend developer",
-  stack: ["React 19", "TypeScript", "Vite", "Tailwind CSS v4", "Redux Toolkit", "RTK Query", "React Router v7", "MSAL", "Azure AD", "Vitest"],
-  responsibilities: [
-  { area: "Authentication", frontend: "MSAL Azure AD integration, silent token acquisition, 401 retry with force-refresh, session storage caching", elsewhere: "Azure AD app registration and API permissions" },
-  { area: "Layout & navigation", frontend: "Collapsible sidebar, route-aware header with page title and icon, user profile dropdown with sign out", elsewhere: "—" },
-  { area: "State management", frontend: "Redux Toolkit slices for graph data and navbar state, RTK Query API slices with token injection via prepareHeaders", elsewhere: "—" },
-  { area: "Routing", frontend: "React Router v7 with lazy-loaded page routes and loading indicator, 404 Not Found page", elsewhere: "—" },
-  { area: "User profile", frontend: "Microsoft Graph API integration to fetch user profile and photo on login", elsewhere: "Microsoft Graph API" },
-  { area: "Testing", frontend: "Vitest unit tests with coverage reporting", elsewhere: "—" }],
-  sections: [
-  {
-    id: "overview",
-    title: "Project overview",
-    paragraphs: [
-      "Innexa is a B2B admin dashboard built with React 19 and TypeScript. It provides a structured shell for internal tooling with Azure AD authentication, a collapsible sidebar, and a route-aware header.",
-      "The project was built under NDA at Infinion Technologies. No confidential business data, internal API endpoints or proprietary screenshots are included in this case study."
-    ]
-  },
-  {
-    id: "problem",
-    title: "Problem statement",
-    paragraphs: ["Internal B2B tools need a consistent, secure shell that handles authentication, navigation and API access without requiring each feature team to rebuild those foundations. Innexa provides that shell."]
-  },
-  {
-    id: "role",
-    title: "My role and responsibilities",
-    paragraphs: ["I was responsible for the full frontend implementation. The table below separates what I built from services provided externally."]
-  },
-  {
-    id: "stack",
-    title: "Technical stack",
-    paragraphs: [
-      "React 19 with TypeScript, built with Vite and the React Compiler enabled. Tailwind CSS v4 for styling. Redux Toolkit with RTK Query for state management and API calls. React Router v7 for client-side routing.",
-      "Authentication is handled by MSAL (Microsoft Authentication Library) against Azure AD. Tokens are cached in sessionStorage and silently refreshed. The app fetches the user's profile and photo from Microsoft Graph on login."
-    ]
-  },
-  {
-    id: "approach",
-    title: "Architecture and implementation",
-    paragraphs: [
-      "The app is structured around a persistent layout shell — a collapsible sidebar and a route-aware header — with page content rendered via an outlet. Routes are lazy-loaded to keep the initial bundle small.",
-      "RTK Query API slices inject the Azure AD access token into every request via a prepareHeaders function. On a 401 response, the slice force-refreshes the token and retries automatically, so feature screens never need to handle auth errors directly.",
-      "Redux slices manage the sidebar collapse state and the Microsoft Graph user data separately from the API layer, keeping UI state and server state cleanly separated."
-    ]
-  },
-  {
-    id: "decisions",
-    title: "Key technical decisions",
-    paragraphs: [
-      "RTK Query over a custom fetch layer: RTK Query's built-in caching, loading states and tag-based invalidation removed a significant amount of boilerplate while keeping the API layer testable.",
-      "MSAL sessionStorage over localStorage: sessionStorage limits token exposure to the current tab, reducing the risk of token theft via XSS compared to localStorage.",
-      "React Router v7 lazy routes: splitting each screen into its own chunk means the dashboard shell loads immediately while heavier page components load on demand."
-    ]
-  },
-  {
-    id: "testing",
-    title: "Testing strategy",
-    paragraphs: ["Unit tests are written with Vitest. Coverage reporting is available via npm run test:coverage. Auth flows and API slices are the primary test targets."]
-  },
-  {
-    id: "results",
-    title: "Results and evidence",
-    paragraphs: ["No production metrics are published for this project. The repository is available for code review at the link below."]
-  },
-  {
-    id: "lessons",
-    title: "Lessons learned",
-    paragraphs: ["Centralising token injection in RTK Query's prepareHeaders made the auth layer invisible to feature code — a pattern worth applying to any project that uses a single auth provider across multiple API endpoints."]
-  }]
-},
+// {
+//   slug: "accessiD8",
+//   title: "AccessiD8",
+//   tagline: "Frontend engineering for a data-driven web application built under NDA.",
+//   role: "Frontend developer",
+//   stack: ["React", "TypeScript", "REST APIs", "Microsoft identity"],
+//   sections: [
+//   {
+//     id: "overview",
+//     title: "Project overview",
+//     paragraphs: ["AccessiD8 is a data-driven web application with dashboards, data presentation and organisational sign-in, built under NDA at Infinion Technologies."],
+//     ownerInput: ["One-sentence description of the product's purpose and audience", "Your dates on the project and team size"]
+//   },
+//   {
+//     id: "context",
+//     title: "Context and constraints",
+//     paragraphs: ["This project was built under NDA. Confidential business information, internal endpoints and customer data are intentionally omitted from this case study."],
+//     ownerInput: ["Constraints you worked under (deadlines, browser support, existing APIs, design system)"]
+//   },
+//   {
+//     id: "role",
+//     title: "My role and responsibilities",
+//     paragraphs: ["Only responsibilities the owner confirms will be listed here."],
+//     ownerInput: ["Confirm which areas you delivered"]
+//   },
+//   {
+//     id: "stack",
+//     title: "Technical stack",
+//     paragraphs: ["React with TypeScript on the client, consuming REST APIs, with organisational sign-in through the Microsoft identity platform."],
+//     ownerInput: ["Exact libraries used for state, data fetching and UI"]
+//   },
+//   {
+//     id: "results",
+//     title: "Results and evidence",
+//     paragraphs: ["No outcome metrics are published for this project. None will be added unless they can be substantiated."]
+//   },
+//   {
+//     id: "lessons",
+//     title: "Lessons learned",
+//     paragraphs: [],
+//     ownerInput: ["What you would do differently next time"]
+//   }]
+// },
+// {
+//   slug: "innexa",
+//   title: "Innexa",
+//   tagline: "A B2B admin dashboard with Azure AD authentication, collapsible sidebar and RTK Query API integration.",
+//   role: "Frontend developer",
+//   stack: ["React 19", "TypeScript", "Vite", "Tailwind CSS v4", "Redux Toolkit", "RTK Query", "React Router v7", "MSAL", "Azure AD", "Vitest"],
+//   responsibilities: [
+//   { area: "Authentication", frontend: "MSAL Azure AD integration, silent token acquisition, 401 retry with force-refresh, session storage caching", elsewhere: "Azure AD app registration and API permissions" },
+//   { area: "Layout & navigation", frontend: "Collapsible sidebar, route-aware header with page title and icon, user profile dropdown with sign out", elsewhere: "—" },
+//   { area: "State management", frontend: "Redux Toolkit slices for graph data and navbar state, RTK Query API slices with token injection via prepareHeaders", elsewhere: "—" },
+//   { area: "Routing", frontend: "React Router v7 with lazy-loaded page routes and loading indicator, 404 Not Found page", elsewhere: "—" },
+//   { area: "User profile", frontend: "Microsoft Graph API integration to fetch user profile and photo on login", elsewhere: "Microsoft Graph API" },
+//   { area: "Testing", frontend: "Vitest unit tests with coverage reporting", elsewhere: "—" }],
+//   sections: [
+//   {
+//     id: "overview",
+//     title: "Project overview",
+//     paragraphs: [
+//       "Innexa is a B2B admin dashboard built with React 19 and TypeScript. It provides a structured shell for internal tooling with Azure AD authentication, a collapsible sidebar, and a route-aware header.",
+//       "The project was built under NDA at Infinion Technologies. No confidential business data, internal API endpoints or proprietary screenshots are included in this case study."
+//     ]
+//   },
+//   {
+//     id: "problem",
+//     title: "Problem statement",
+//     paragraphs: ["Internal B2B tools need a consistent, secure shell that handles authentication, navigation and API access without requiring each feature team to rebuild those foundations. Innexa provides that shell."]
+//   },
+//   {
+//     id: "role",
+//     title: "My role and responsibilities",
+//     paragraphs: ["I was responsible for the full frontend implementation. The table below separates what I built from services provided externally."]
+//   },
+//   {
+//     id: "stack",
+//     title: "Technical stack",
+//     paragraphs: [
+//       "React 19 with TypeScript, built with Vite and the React Compiler enabled. Tailwind CSS v4 for styling. Redux Toolkit with RTK Query for state management and API calls. React Router v7 for client-side routing.",
+//       "Authentication is handled by MSAL (Microsoft Authentication Library) against Azure AD. Tokens are cached in sessionStorage and silently refreshed. The app fetches the user's profile and photo from Microsoft Graph on login."
+//     ]
+//   },
+//   {
+//     id: "approach",
+//     title: "Architecture and implementation",
+//     paragraphs: [
+//       "The app is structured around a persistent layout shell — a collapsible sidebar and a route-aware header — with page content rendered via an outlet. Routes are lazy-loaded to keep the initial bundle small.",
+//       "RTK Query API slices inject the Azure AD access token into every request via a prepareHeaders function. On a 401 response, the slice force-refreshes the token and retries automatically, so feature screens never need to handle auth errors directly.",
+//       "Redux slices manage the sidebar collapse state and the Microsoft Graph user data separately from the API layer, keeping UI state and server state cleanly separated."
+//     ]
+//   },
+//   {
+//     id: "decisions",
+//     title: "Key technical decisions",
+//     paragraphs: [
+//       "RTK Query over a custom fetch layer: RTK Query's built-in caching, loading states and tag-based invalidation removed a significant amount of boilerplate while keeping the API layer testable.",
+//       "MSAL sessionStorage over localStorage: sessionStorage limits token exposure to the current tab, reducing the risk of token theft via XSS compared to localStorage.",
+//       "React Router v7 lazy routes: splitting each screen into its own chunk means the dashboard shell loads immediately while heavier page components load on demand."
+//     ]
+//   },
+//   {
+//     id: "testing",
+//     title: "Testing strategy",
+//     paragraphs: ["Unit tests are written with Vitest. Coverage reporting is available via npm run test:coverage. Auth flows and API slices are the primary test targets."]
+//   },
+//   {
+//     id: "results",
+//     title: "Results and evidence",
+//     paragraphs: ["No production metrics are published for this project. The repository is available for code review at the link below."]
+//   },
+//   {
+//     id: "lessons",
+//     title: "Lessons learned",
+//     paragraphs: ["Centralising token injection in RTK Query's prepareHeaders made the auth layer invisible to feature code — a pattern worth applying to any project that uses a single auth provider across multiple API endpoints."]
+//   }]
+// },
 {
   slug: "azure-ai-verification",
   title: "Azure AI Identity Verification",

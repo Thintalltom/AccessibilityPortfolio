@@ -13,30 +13,30 @@ export const projects: Project[] = [
   verification: "verified",
   nda: true
 },
-{
-  slug: "accessiD8",
-  title: "AccessiD8",
-  category: "frontend",
-  categoryLabel: "Frontend engineering",
-  summary: "A data-driven web application with dashboards, data presentation and organisational sign-in built under NDA.",
-  contribution: "Frontend development in React and TypeScript.",
-  tech: ["React", "TypeScript", "REST APIs", "Microsoft identity"],
-  caseStudyPath: "/projects/accessiD8",
-  verification: "pending",
-  nda: true
-},
-{
-  slug: "innexa",
-  title: "Innexa",
-  category: "frontend",
-  categoryLabel: "Frontend engineering",
-  summary: "A B2B admin dashboard with collapsible sidebar navigation, Azure AD authentication, route-aware header and lazy-loaded pages.",
-  contribution: "Full frontend implementation including auth flow, dashboard shell, Redux state management and RTK Query API integration.",
-  tech: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Redux Toolkit", "MSAL", "Azure AD", "Vitest"],
-  caseStudyPath: "/projects/innexa",
-  verification: "pending",
-  nda: true
-},
+// {
+//   slug: "accessiD8",
+//   title: "AccessiD8",
+//   category: "frontend",
+//   categoryLabel: "Frontend engineering",
+//   summary: "A data-driven web application with dashboards, data presentation and organisational sign-in built under NDA.",
+//   contribution: "Frontend development in React and TypeScript.",
+//   tech: ["React", "TypeScript", "REST APIs", "Microsoft identity"],
+//   caseStudyPath: "/projects/accessiD8",
+//   verification: "pending",
+//   nda: true
+// },
+// {
+//   slug: "innexa",
+//   title: "Innexa",
+//   category: "frontend",
+//   categoryLabel: "Frontend engineering",
+//   summary: "A B2B admin dashboard with collapsible sidebar navigation, Azure AD authentication, route-aware header and lazy-loaded pages.",
+//   contribution: "Full frontend implementation including auth flow, dashboard shell, Redux state management and RTK Query API integration.",
+//   tech: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Redux Toolkit", "MSAL", "Azure AD", "Vitest"],
+//   caseStudyPath: "/projects/innexa",
+//   verification: "pending",
+//   nda: true
+// },
 {
   slug: "azure-ai-verification",
   title: "Azure AI Identity Verification",

@@ -12,7 +12,7 @@ export const site = {
   linkedinUrl: "https://www.linkedin.com/in/tomide-adeyanju-a630551b9/" as string | null,
   githubUrl: "https://github.com/Thintalltom" as string | null,
   /** Path or URL to a real CV PDF, e.g. "/cv.pdf". Leave null until the file exists. */
-  cvUrl: "/cv.pdf" as string | null,
+  cvUrl: "/Tomide_Adeyanju_CV.pdf" as string | null,
   /** ISO date of the most recent genuine accessibility review of this portfolio. */
   lastAccessibilityReview: null as string | null
 };
