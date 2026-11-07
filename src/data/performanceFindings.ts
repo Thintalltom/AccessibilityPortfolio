@@ -1,0 +1,45 @@
+import type { Finding } from "../types/finding";
+
+export const performanceFindings: Finding[] = [
+{
+  id: "PRF-001",
+  title: "Expensive statistics recalculated on unrelated state changes",
+  category: "performance",
+  component: "PerformanceLab",
+  route: "/performance/lab",
+  summary: "Appointment statistics over 40,000 synthetic records are recalculated on every render, including renders caused by typing in an unrelated field.",
+  expectedBehavior: "The calculation runs only when its input (the duration threshold) changes.",
+  actualBehavior: "Every keystroke in the note field repeats the full sort and percentile calculation.",
+  reproductionSteps: ["Open the performance lab, Experiment 1, in Baseline mode.", "Run 20 unrelated updates.", "Compare 'calculations run' with 'renders'."],
+  impact: "Wasted main-thread time on every interaction; on slower devices this can delay input feedback.",
+  severity: "medium",
+  severityRationale: "Measurable per-interaction cost in a controlled demo; no user-facing task is blocked.",
+  evidence: ["Live measurement in your browser: calculation count and median duration per calculation, shown in Experiment 1."],
+  remediation: "Memoise the result with useMemo keyed on the threshold.",
+  codeBefore: `const stats = computeStats(records, threshold);`,
+  codeAfter: `const stats = useMemo(() => computeStats(records, threshold), [threshold]);`,
+  fixLocation: "components/performance/CalculationExperiment.tsx",
+  status: "fixed",
+  retestPlan: ["Run 20 unrelated updates in each mode; confirm Optimised performs at most one calculation."]
+},
+{
+  id: "PRF-002",
+  title: "Every list row re-renders when the parent updates",
+  category: "performance",
+  component: "PerformanceLab",
+  route: "/performance/lab",
+  summary: "A 150-row list re-renders all rows whenever an unrelated counter in the parent changes.",
+  expectedBehavior: "Rows whose props did not change are skipped.",
+  actualBehavior: "Each parent update renders 150 rows.",
+  reproductionSteps: ["Open Experiment 2 in Baseline mode.", "Run 20 parent updates.", "Read the row render counter."],
+  impact: "Render work scales with list length on every unrelated update.",
+  severity: "low",
+  severityRationale: "Rows are cheap in this demo; the cost is small but grows with real content.",
+  evidence: ["Live row render counter in Experiment 2."],
+  remediation: "Wrap rows in React.memo and pass stable props.",
+  codeBefore: `function Row({ item }) { … }`,
+  codeAfter: `const Row = memo(function Row({ item }) { … });`,
+  fixLocation: "components/performance/RerenderExperiment.tsx",
+  status: "fixed",
+  retestPlan: ["Run 20 parent updates in each mode; confirm Optimised row renders stay at the initial count."]
+}];
