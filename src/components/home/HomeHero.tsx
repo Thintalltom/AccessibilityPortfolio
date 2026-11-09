@@ -33,7 +33,7 @@ export function HomeHero() {
               Explore Accessibility Lab
             </ButtonLink>
           </div>
-          <div className="mt-6">
+          {/* <div className="mt-6">
             {site.cvUrl ?
             <a href={site.cvUrl} target="_blank" rel="noopener noreferrer" className="font-medium text-accent underline underline-offset-4 hover:text-accent-hover">
                 View my CV
@@ -41,7 +41,7 @@ export function HomeHero() {
 
             <TextLink to="/experience#cv">View my CV and experience</TextLink>
             }
-          </div>
+          </div> */}
         </div>
         <div className="relative flex items-end justify-center pb-16 pl-4">
           {/* Circle background + photo */}
