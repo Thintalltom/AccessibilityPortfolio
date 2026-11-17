@@ -38,10 +38,10 @@ export function LabPreview() {
           </ul>
         </div>
 
-        <div className="self-center rounded-2xl border border-line-strong bg-surface p-6 sm:p-7">
+        <div className="w-full self-center overflow-hidden rounded-2xl border border-line-strong bg-surface p-4 sm:p-6 lg:p-7">
           <p className="font-mono text-[13px] text-fg-muted">Sample issue · ALD-001 · Forms</p>
           <h3 className="mt-2 text-lg font-semibold text-fg">A form field without an accessible name</h3>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
             <div className="rounded-xl border border-line p-4">
               <p className="text-sm font-medium text-danger">Flawed build</p>
               <div aria-hidden="true" className="mt-3 rounded-md bg-portal-bg p-3">

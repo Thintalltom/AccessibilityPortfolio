@@ -43,9 +43,9 @@ export function HomeHero() {
             }
           </div> */}
         </div>
-        <div className="relative flex items-end justify-center pb-16 pl-4">
+        <div className="relative flex items-end justify-center pb-8 pl-4 lg:pb-16">
           {/* Circle background + photo */}
-          <div className="relative h-[420px] w-[420px] shrink-0">
+          <div className="relative h-[260px] w-[260px] shrink-0 sm:h-[340px] sm:w-[340px] lg:h-[420px] lg:w-[420px]">
             <div className="absolute inset-0 rounded-full bg-surface-hover" />
             <img
               src={logo}
