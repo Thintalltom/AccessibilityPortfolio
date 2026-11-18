@@ -5,7 +5,6 @@ export const experienceEntry = defineType({
   title: 'Experience Entry',
   type: 'document',
   fields: [
-    defineField({ name: 'id', title: 'ID', type: 'string', validation: r => r.required() }),
     defineField({ name: 'kind', title: 'Kind', type: 'string', options: { list: ['role', 'education', 'certification'] } }),
     defineField({ name: 'title', title: 'Title', type: 'string', validation: r => r.required() }),
     defineField({ name: 'organisation', title: 'Organisation', type: 'string' }),

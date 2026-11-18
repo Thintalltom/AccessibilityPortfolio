@@ -1,7 +1,7 @@
 import React from "react";
-import { projects } from "../data/projects";
+import { useProjects } from "../hooks/useProjects";
 import { skillGroups } from "../data/skills";
-import { experience } from "../data/experience";
+import { useExperience } from "../hooks/useExperience";
 import { articles } from "../data/articles";
 import { usePageMeta } from "../hooks/usePageMeta";
 import { cn } from "../utils/cn";
@@ -20,6 +20,8 @@ export function Home() {
     "Frontend Engineer & Accessibility QA Specialist",
     "Portfolio of a frontend engineer and accessibility QA specialist: React and TypeScript projects, an interactive accessibility lab, audits and measured performance work."
   );
+  const { projects } = useProjects();
+  const { experience } = useExperience();
   const published = articles.filter((a) => a.status === "published");
   const drafts = articles.filter((a) => a.status === "draft");
 

@@ -5,13 +5,13 @@ export async function getProjects(): Promise<Project[]> {
   return sanityClient.fetch(`*[_type == "project"] | order(_createdAt asc) {
     "slug": slug.current,
     title, category, categoryLabel, summary, contribution,
-    tech, caseStudyPath, verification, liveUrl, sourceUrl
+    tech, caseStudyPath, verification, liveUrl, sourceUrl, nda
   }`)
 }
 
 export async function getExperience(): Promise<ExperienceEntry[]> {
   return sanityClient.fetch(`*[_type == "experienceEntry"] | order(order asc) {
-    id, kind, title, organisation, period, summary, skills, credentialUrl, placeholder
+    "id": _id, kind, title, organisation, period, summary, skills, credentialUrl, placeholder
   }`)
 }
 

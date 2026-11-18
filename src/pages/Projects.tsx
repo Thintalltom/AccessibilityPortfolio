@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import type { ProjectCategory } from "../types/content";
-import { projects } from "../data/projects";
+import { useProjects } from "../hooks/useProjects";
 import { usePageMeta } from "../hooks/usePageMeta";
 import { cn } from "../utils/cn";
 import { container } from "../utils/layout";
@@ -16,6 +16,7 @@ const filters: {value: ProjectCategory | "all";label: string;}[] = [
 
 export function Projects() {
   const [filter, setFilter] = useState<ProjectCategory | "all">("all");
+  const { projects, loading } = useProjects();
   usePageMeta("Projects", "Frontend engineering case studies, an accessible component library, and an accessibility audit lab.");
   const visible = filter === "all" ? projects : projects.filter((p) => p.category === filter);
 

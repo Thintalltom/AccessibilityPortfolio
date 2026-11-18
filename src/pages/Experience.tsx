@@ -1,5 +1,5 @@
 import React from "react";
-import { experience } from "../data/experience";
+import { useExperience } from "../hooks/useExperience";
 import { site } from "../data/site";
 import { usePageMeta } from "../hooks/usePageMeta";
 import { cn } from "../utils/cn";
@@ -11,6 +11,7 @@ import { ButtonLink } from "../components/ui/ButtonLink";
 
 export function Experience() {
   usePageMeta("Experience", "Professional experience, education and certifications.");
+  const { experience } = useExperience();
   const roles = experience.filter((e) => e.kind === "role");
   const education = experience.filter((e) => e.kind === "education");
   const certifications = experience.filter((e) => e.kind === "certification");
