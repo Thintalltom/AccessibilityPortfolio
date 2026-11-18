@@ -37,7 +37,7 @@ export function SiteLayout() {
   };
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-bg text-fg">
+    <div className="flex min-h-screen w-full flex-col overflow-x-hidden bg-bg text-fg">
       <a href="#main-content" className="skip-link" onClick={skipToMain}>
         Skip to main content
       </a>

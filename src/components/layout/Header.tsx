@@ -1,22 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { MenuIcon, XIcon } from "lucide-react";
+import { MenuIcon, MoonIcon, SunIcon, XIcon } from "lucide-react";
 import { primaryNav, site } from "../../data/site";
 import { cn } from "../../utils/cn";
 import { container } from "../../utils/layout";
 import { CvLink } from "./CvLink";
-import logo from '../../Asset/Tomide.png';
+import { useTheme } from "../../hooks/useTheme";
+import logo from '../../Asset/Profile_Picture.png';
 export function Header() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const { theme, toggle } = useTheme();
   const name = site.ownerName ?? "Yo Name";
-  const initials = name.
-  split(" ").
-  map((part) => part[0]).
-  join("").
-  slice(0, 2).
-  toUpperCase();
 
   useEffect(() => {
     setOpen(false);
@@ -42,7 +38,7 @@ export function Header() {
             src={logo}
             alt=""
             aria-hidden="true"
-            className="h-8 w-8 rounded-lg border border-line-strong object-cover"
+            className="h-9 w-9 rounded-full border border-line-strong object-cover object-top"
           />
           <span className="font-semibold tracking-tight">{name}</span>
           <span className="sr-only">, home</span>
@@ -73,6 +69,13 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <CvLink className="hidden sm:inline-flex" />
+          <button
+            type="button"
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            onClick={toggle}
+            className="inline-flex min-h-[44px] w-[44px] items-center justify-center rounded-[10px] border border-line-strong text-fg transition-colors duration-150 hover:bg-surface-hover">
+            {theme === "dark" ? <SunIcon aria-hidden="true" className="h-4 w-4" /> : <MoonIcon aria-hidden="true" className="h-4 w-4" />}
+          </button>
           <button
             ref={menuButtonRef}
             type="button"

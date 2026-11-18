@@ -31,7 +31,7 @@ export function Footer() {
       </div>
       <div className="border-t border-line">
         <p className={cn(container, "py-6 text-sm text-fg-muted")}>
-          © {year} {site.ownerName ?? "Your Name"}. Built with React, TypeScript and Tailwind CSS. No tracking scripts.
+          © {year} {site.ownerName ?? "Your Name"}.
         </p>
       </div>
     </footer>);

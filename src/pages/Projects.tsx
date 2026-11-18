@@ -26,7 +26,9 @@ export function Projects() {
         description="Case studies written to show the decisions, not just the screenshots. Projects marked “pending verification” are drafts awaiting confirmed details."
         crumbs={[{ label: "projects" }]} />
       
-      <div className={cn(container, "py-12")}>
+      <div className={cn(container, "py-12")}
+      
+      >
         <div role="group" aria-label="Filter projects by category" className="flex flex-wrap gap-2">
           {filters.map((f) =>
           <button
@@ -48,7 +50,9 @@ export function Projects() {
         <p role="status" className="mt-4 text-[15px] text-fg-muted">
           {visible.length} {visible.length === 1 ? "project" : "projects"}
         </p>
-        <ul className="mt-6 grid gap-6 md:grid-cols-2">
+        <ul 
+        className="mt-6 grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2"
+        >
           {visible.map((p) =>
           <li key={p.slug}>
               <ProjectCard project={p} headingLevel={2} />

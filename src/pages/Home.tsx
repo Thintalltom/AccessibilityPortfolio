@@ -28,14 +28,14 @@ export function Home() {
       <HomeHero />
       <Capabilities />
 
-      <section aria-labelledby="projects-heading" className={cn(container, "pb-20 lg:pb-24")}>
+      <section aria-labelledby="projects-heading" className={cn(container, "py-16 lg:pb-24")}>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <h2 id="projects-heading" className={sectionHeading}>
             Featured projects
           </h2>
           <TextLink to="/projects">All projects</TextLink>
         </div>
-        <ul className="mt-10 grid gap-6 md:grid-cols-2">
+        <ul className="mt-8 grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
           {projects.map((p) =>
           <li key={p.slug}>
               <ProjectCard project={p} />

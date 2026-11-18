@@ -28,28 +28,53 @@
   /* Borders and states */
   --color-border: #30394a;
   --color-border-strong: #46536a;
-  /* Added after contrast review: #46536A only reaches ~2.5:1 against the page
-     background, below the 3:1 needed for form control boundaries (WCAG 1.4.11). */
   --color-border-input: #6b7890;
   --color-success: #86efac;
   --color-warning: #fcd34d;
   --color-danger: #fda4af;
   --color-info: #93c5fd;
-  /* Fictional AccessLab portal (light product, isolated from the portfolio) */
+  /* Fictional AccessLab portal */
   --portal-bg: #ffffff;
   --portal-subtle: #f4f6f9;
   --portal-ink: #1a1f2b;
   --portal-muted: #4a5363;
-  --portal-faint: #a3aab7; /* intentionally low contrast — used only in the flawed build */
+  --portal-faint: #a3aab7;
   --portal-line: #d5dae3;
   --portal-brand: #1f4e8c;
   --portal-brand-hover: #173d6e;
   --portal-danger: #b42318;
   --portal-success: #146c2e;
 }
+
+[data-theme="light"] {
+  /* Backgrounds */
+  --color-bg: #f8f9fb;
+  --color-bg-elevated: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f0f2f5;
+  --color-surface-muted: #f3f5f8;
+  /* Text */
+  --color-text-primary: #0f1117;
+  --color-text-secondary: #3d4757;
+  --color-text-muted: #6b7585;
+  --color-text-inverse: #ffffff;
+  /* Accents */
+  --color-accent: #6d28d9;
+  --color-accent-hover: #5b21b6;
+  --color-accent-secondary: #0891b2;
+  --color-accent-soft: #ede9fe;
+  /* Borders and states */
+  --color-border: #dde1e9;
+  --color-border-strong: #b8bfcc;
+  --color-border-input: #8892a4;
+  --color-success: #166534;
+  --color-warning: #92400e;
+  --color-danger: #9f1239;
+  --color-info: #1e40af;
+}
 html {
   background: var(--color-bg);
-  color-scheme: dark;
+  color-scheme: dark light;
 }
 body {
   margin: 0;

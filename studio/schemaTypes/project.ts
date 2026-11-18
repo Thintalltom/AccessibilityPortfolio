@@ -16,5 +16,6 @@ export const project = defineType({
     defineField({ name: 'verification', title: 'Verification', type: 'string', options: { list: ['verified', 'pending'] } }),
     defineField({ name: 'liveUrl', title: 'Live URL', type: 'url' }),
     defineField({ name: 'sourceUrl', title: 'Source URL', type: 'url' }),
+    defineField({ name: 'nda', title: 'NDA Project', type: 'boolean', description: 'Check this if the project is under NDA — hides source/live links and shows an NDA notice instead.', initialValue: false }),
   ],
 })
